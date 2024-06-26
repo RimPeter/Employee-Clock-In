@@ -1,0 +1,40 @@
+{% extends "employee_app/base.html" %} 
+
+{% block content %}
+
+<body>
+
+  <div class="container bg-light shadow-md p-5 form-layout">
+    <h3>Login to your account</h3>
+
+    <hr/>
+    <br/>
+    <form method="POST" autocomplete="off">
+
+      {% csrf_token %} 
+      
+      {{form.username}}
+
+      <br/>
+
+      {{form.password}}
+
+      <br/>
+
+      <button type="submit" class="btn btn-primary w-100 btn-block p-2">
+        Log-in &nbsp; <i class="fa fa-user" aria-hidden="true"></i>
+      </button>
+    </form>
+
+    <br/>
+
+    <div class="text-center">
+      <p>Don't have an account?</p>
+      <a href="{% url '' %}"> Register </a>
+    </div>
+  </div>
+
+  <br/>
+</body>
+
+{% endblock %}
